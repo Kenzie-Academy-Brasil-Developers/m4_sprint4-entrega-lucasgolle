@@ -7,7 +7,10 @@ const updateProductController = async (request, response) => {
   
       const product = await updateProductService(productId, data)
       
-      return response.json(product)
+      return response.json({
+        product,
+        message: "Product updated"
+    })
   } catch (error) {
       return response.status(400).json({
           message: error.message

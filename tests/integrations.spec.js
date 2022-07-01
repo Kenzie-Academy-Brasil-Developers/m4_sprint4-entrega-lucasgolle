@@ -16,6 +16,8 @@ describe("Testes rota /categories", () => {
   it("Testando criacao de categoria", async () => {
     const response = await request(app).post("/categories").send(testCategory);
 
+    console.log(response.body)
+
     testCategory.id = response.body.category.id;
     testProduct.category_id = response.body.category.id;
 

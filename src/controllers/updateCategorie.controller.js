@@ -5,9 +5,12 @@ const updateCategorieController = async (request, response) => {
     const categorieId = request.params.id
     const data = request.body
 
-    const categorie = await updateCategorieService(categorieId, data)
+    const category = await updateCategorieService(categorieId, data)
     
-    return response.json(categorie)
+    return response.json({
+        category,
+        message: "Update category"
+    })
 } catch (error) {
     return response.status(400).json({
         message: error.message
