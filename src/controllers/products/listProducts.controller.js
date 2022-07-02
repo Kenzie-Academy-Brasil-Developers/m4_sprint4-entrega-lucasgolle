@@ -1,6 +1,6 @@
 import listProductsService from "../../services/products/listProducts.service";
 
-const listProductsController = async (req, response) => {
+const listProductsController = async (request, response) => {
   try {
     const products = await listProductsService();
 

@@ -3,8 +3,6 @@ import listProductsAndCategoriesService from "../../services/products/listProduc
 const listProductsAndCategoriesController = async (req, response) => {
   try {
     const category_id = req.params.id;
-
-    const category = category_id
     
     const products = await listProductsAndCategoriesService(category_id);
 

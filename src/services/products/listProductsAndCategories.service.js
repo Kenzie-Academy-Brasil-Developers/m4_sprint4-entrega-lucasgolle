@@ -2,7 +2,10 @@ import database from "../../database";
 
 const listProductsAndCategoriesService = async (category_id) => {
   try {
-    const res = await database.query(`SELECT *,p.name as name FROM products p JOIN categories c ON c.id = p.category_id WHERE c.id = ${category_id}`);
+    const res = await database.query(
+      `SELECT * , c.name as Category FROM products p LEFT JOIN categories c ON c.id = p.category_id WHERE category_id = $1`,
+      [category_id]
+    );
     return res.rows;
   } catch (error) {
     throw new Error(error);

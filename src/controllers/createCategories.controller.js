@@ -11,7 +11,9 @@ const createCategoriesController = async (request, response) => {
       message: "Category created"
     });
   } catch (error) {
-    return response.status(400).json(error.message);
+    return response.status(400).json({
+      message: "Error create category"
+    });
   }
 };
 
