@@ -18,6 +18,6 @@ productRouter.patch("/:id", updateProductController);
 
 productRouter.delete("/:id", deleteProductController);
 
-productRouter.get("/category/:id", listProductsAndCategoriesController);
+productRouter.get("/category/:category_id", listProductsAndCategoriesController);
 
 export default productRouter;
